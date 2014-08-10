@@ -19,4 +19,11 @@ RSpec.describe HomeController, :type => :controller do
       expect(response.body).to eq todo.to_json
     end
   end
+  context 'DELETE destroy' do
+    it 'should respond successfully' do
+      delete :destroy
+      expect(response).to be_successful
+    end
+  end
+
 end

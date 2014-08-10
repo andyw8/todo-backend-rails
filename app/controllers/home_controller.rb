@@ -5,4 +5,7 @@ class HomeController < ApplicationController
   def create
     render json: params.slice(:title)
   end
+  def destroy
+    render text: ""
+  end
 end
