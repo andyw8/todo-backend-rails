@@ -13,6 +13,10 @@ gem 'rails_12factor'
 gem 'rack-cors'
 gem 'unicorn'
 
+group :test do
+  gem 'rspec-rails'
+end
+
 group :doc do
   gem 'sdoc', require: false
 end
