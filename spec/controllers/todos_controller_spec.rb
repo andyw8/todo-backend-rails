@@ -80,6 +80,11 @@ RSpec.describe TodosController, :type => :controller do
       expect(Todo).to receive(:update).with("12", title_attr)
       patch :update, { id: 12 }.merge(title_attr)
     end
+    it 'should update completed' do
+      completed_attr = { completed: true }
+      expect(Todo).to receive(:update).with("12", completed_attr)
+      patch :update, { id: 12 }.merge(completed_attr)
+    end
   end
 
 end
