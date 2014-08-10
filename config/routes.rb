@@ -1,5 +1,5 @@
 TodoBackendRails::Application.routes.draw do
-  post "/" => "home#create"
-  delete "/" => "home#destroy"
-  root 'home#index'
+  post "/" => "todos#create"
+  delete "/" => "todos#destroy"
+  root 'todos#index'
 end
