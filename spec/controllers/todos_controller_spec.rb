@@ -69,6 +69,12 @@ RSpec.describe TodosController, :type => :controller do
       patch :update, id: 12
       expect(response).to be_successful
     end
+    it 'should render updated object' do
+      todo = double
+      allow(Todo).to receive(:update).and_return(todo)
+      patch :update, id: 12
+      expect(response.body).to eq todo.to_json
+    end
     it 'should update title' do
       title_attr = { title: 'test' }
       expect(Todo).to receive(:update).with("12", title_attr)

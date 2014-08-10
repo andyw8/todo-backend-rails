@@ -17,8 +17,7 @@ class TodosController < ApplicationController
   end
 
   def update
-    Todo.update(params[:id], todo_params)
-    render text: ""
+    render json: Todo.update(params[:id], todo_params)
   end
 
   private
