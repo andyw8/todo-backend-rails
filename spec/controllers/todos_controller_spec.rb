@@ -40,6 +40,12 @@ RSpec.describe TodosController, :type => :controller do
       expect(Todo).to receive(:create).with(todo)
       post :create, todo
     end
+
+    it 'should create the todo with order' do
+      todo = { order: "52" }
+      expect(Todo).to receive(:create).with(todo)
+      post :create, todo
+    end
   end
   context 'DELETE destroy_all' do
     it 'should respond successfully' do
@@ -84,6 +90,11 @@ RSpec.describe TodosController, :type => :controller do
       completed_attr = { completed: true }
       expect(Todo).to receive(:update).with("12", completed_attr)
       patch :update, { id: 12 }.merge(completed_attr)
+    end
+    it 'should update order' do
+      order_attr = { order: "1" }
+      expect(Todo).to receive(:update).with("12", order_attr)
+      patch :update, { id: 12 }.merge(order_attr)
     end
   end
   context 'DELETE destroy' do
