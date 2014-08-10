@@ -7,4 +7,10 @@ RSpec.describe HomeController, :type => :controller do
       expect(response).to be_successful
     end
   end
+  context 'POST create' do
+    it 'should respond successfully' do
+      post :create
+      expect(response).to be_successful
+    end
+  end
 end
