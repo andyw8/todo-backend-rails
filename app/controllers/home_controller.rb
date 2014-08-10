@@ -3,6 +3,6 @@ class HomeController < ApplicationController
     render text: ""
   end
   def create
-    render json: params[:todo]
+    render json: params.slice(:title)
   end
 end
