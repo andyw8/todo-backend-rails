@@ -51,5 +51,17 @@ RSpec.describe TodosController, :type => :controller do
       delete :destroy
     end
   end
+  context 'GET show' do
+    let(:todo) { double }
+    before { allow(Todo).to receive(:find).and_return(todo) }
+    it 'should respond successfully' do
+      get :show, id: 12
+      expect(response).to be_successful
+    end
+    it 'should respond with todo' do
+      get :show, id: 12
+      expect(response.body).to eq todo.to_json
+    end
+  end
 
 end

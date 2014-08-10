@@ -12,6 +12,10 @@ class TodosController < ApplicationController
     render text: ""
   end
 
+  def show
+    render json: Todo.find(params[:id])
+  end
+
   private
 
   def todo_params
