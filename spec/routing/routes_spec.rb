@@ -14,4 +14,8 @@ describe 'routes' do
   it 'should route GET /:id to todos#show' do
     expect(get: '/12').to route_to('todos#show', id: "12")
   end
+
+  it 'should route PATCH /:id to todos#update' do
+    expect(patch: '/12').to route_to('todos#update', id: "12")
+  end
 end

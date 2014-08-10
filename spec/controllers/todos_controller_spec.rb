@@ -63,5 +63,17 @@ RSpec.describe TodosController, :type => :controller do
       expect(response.body).to eq todo.to_json
     end
   end
+  context 'PATCH update' do
+    it 'should respond successfully' do
+      allow(Todo).to receive(:update)
+      patch :update, id: 12
+      expect(response).to be_successful
+    end
+    it 'should update title' do
+      title_attr = { title: 'test' }
+      expect(Todo).to receive(:update).with("12", title_attr)
+      patch :update, { id: 12 }.merge(title_attr)
+    end
+  end
 
 end
