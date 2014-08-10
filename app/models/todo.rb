@@ -1,6 +1,6 @@
 class Todo < ActiveRecord::Base
   def url
-    "/#{id}"
+    "http://todo-backend-rails.herokuapp.com/#{id}"
   end
 
   def serializable_hash config
