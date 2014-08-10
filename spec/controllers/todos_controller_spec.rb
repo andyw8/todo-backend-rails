@@ -86,5 +86,15 @@ RSpec.describe TodosController, :type => :controller do
       patch :update, { id: 12 }.merge(completed_attr)
     end
   end
+  context 'DELETE destroy' do
+    it 'should respond successfully' do
+      delete :destroy, id: 12
+      expect(response).to be_successful
+    end
+    it 'should delete the record' do
+      expect(Todo).to receive(:delete).with("12")
+      delete :destroy, id: 12
+    end
+  end
 
 end

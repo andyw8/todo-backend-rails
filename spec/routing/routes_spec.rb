@@ -18,4 +18,8 @@ describe 'routes' do
   it 'should route PATCH /:id to todos#update' do
     expect(patch: '/12').to route_to('todos#update', id: "12")
   end
+
+  it 'should route DELETE /:id to todos#destroy' do
+    expect(delete: '/12').to route_to('todos#destroy', id: "12")
+  end
 end
