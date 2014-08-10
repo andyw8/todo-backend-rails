@@ -7,8 +7,8 @@ describe 'routes' do
     expect(post: '/').to route_to('todos#create')
   end
 
-  it 'should route DELETE / to todos#destroy' do
-    expect(delete: '/').to route_to('todos#destroy')
+  it 'should route DELETE / to todos#destroy_all' do
+    expect(delete: '/').to route_to('todos#destroy_all')
   end
 
   it 'should route GET /:id to todos#show' do

@@ -7,7 +7,7 @@ class TodosController < ApplicationController
     render json: Todo.create(todo_params)
   end
 
-  def destroy
+  def destroy_all
     Todo.delete_all
     render text: ""
   end

@@ -41,14 +41,14 @@ RSpec.describe TodosController, :type => :controller do
       post :create, todo
     end
   end
-  context 'DELETE destroy' do
+  context 'DELETE destroy_all' do
     it 'should respond successfully' do
-      delete :destroy
+      delete :destroy_all
       expect(response).to be_successful
     end
     it 'should delete all records' do
       expect(Todo).to receive(:delete_all)
-      delete :destroy
+      delete :destroy_all
     end
   end
   context 'GET show' do
