@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'rails', '4.0.4'
 gem 'pg'
@@ -10,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'rails_12factor'
 gem 'rack-cors'
+gem 'unicorn'
 
 group :doc do
   gem 'sdoc', require: false
