@@ -8,6 +8,7 @@ class TodosController < ApplicationController
   end
 
   def destroy
+    Todo.delete_all
     render text: ""
   end
 

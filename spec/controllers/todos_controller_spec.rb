@@ -46,6 +46,10 @@ RSpec.describe TodosController, :type => :controller do
       delete :destroy
       expect(response).to be_successful
     end
+    it 'should delete all records' do
+      expect(Todo).to receive(:delete_all)
+      delete :destroy
+    end
   end
 
 end
