@@ -12,5 +12,11 @@ RSpec.describe HomeController, :type => :controller do
       post :create
       expect(response).to be_successful
     end
+
+    it 'should echo the todo back' do
+      todo = { a: "3" }
+      post :create, todo: todo
+      expect(response.body).to eq todo.to_json
+    end
   end
 end
