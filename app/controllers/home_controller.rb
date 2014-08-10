@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    render text: ""
+    render json: []
   end
   def create
     render json: params.slice(:title)

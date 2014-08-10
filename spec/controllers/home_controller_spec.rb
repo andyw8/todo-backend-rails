@@ -6,6 +6,10 @@ RSpec.describe HomeController, :type => :controller do
       get :index
       expect(response).to be_successful
     end
+    it 'should return empty array' do
+      get :index
+      expect(response.body).to eq [].to_json
+    end
   end
   context 'POST create' do
     it 'should respond successfully' do
